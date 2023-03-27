@@ -3,10 +3,6 @@ import java.util.Collections;
 import java.util.List;
 
 
-import java.util.*;
-import java.io.*;
-
-
 public class Runner {
 
     public static void main(String[] args) {
@@ -38,10 +34,9 @@ public class Runner {
 //        8. Sort the list alphabetically
         Collections.sort(scottishIslands);
 //        9. Print out all the islands using a for loop
-        for (String island : scottishIslands){
+        for (String island : scottishIslands) {
             System.out.println(island);
         }
-
 
 
 //        NUMBERS
@@ -51,8 +46,8 @@ public class Runner {
         System.out.println("numbers: " + numbers);
 
 //        1. Print out a list of the even integers
-        for (int i = 0; i < numbers.size(); i++){
-            if(numbers.get(i) % 2 == 0){
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) % 2 == 0) {
                 System.out.println(numbers.get(i));
             }
         }
@@ -63,53 +58,64 @@ public class Runner {
 
 //        3. Print True if the list contains a 1 next to a 1 somewhere.
 
-//        for(int i = 0; i < numbers.size(); i++) {
-//            int number_of_digits_in_i = Integer.toString(numbers.get(i)).length();
-//            int last_digit_in_i = numbers.get(i) % 10;
-//            int first_digit_in_i = Integer.toString(numbers.get(i)).charAt(0);
+
+        boolean testd = false;
+        int result = 0;
+        int x = 1;
+
+        for(int i = 0; i < numbers.size() - 1; i++) {
+            if(numbers.get(i) == x && numbers.get(i+1) == x) {
+                System.out.println( String.valueOf(true));
+                result = 1;
+            }
+
+            if(i <= numbers.size() - 3 && numbers.get(i) == x && numbers.get(i+2) == x) {
+                System.out.println( String.valueOf(true));
+                result = 1;
+            }
+        }
+
+        if (result == 0){
+                System.out.println( String.valueOf(false));
+        }
+
+
+//        CHANGES MADE TO THE ABOVE TASK AFTER PAIRED PROGRAMMING FINISHED
+//        // 1) Set default value for boolean variable 'result' to false
+//        boolean result = false;
 //
-//            System.out.println("first digit is " + first_digit_in_i);
-//            System.out.println("last digit is " + last_digit_in_i);
-//            System.out.println(number_of_digits_in_i);
+//        // 2) Iterate through ArrayList to find consecutive 1s
+//        for (int i = 0; i < numbers.size() - 1; i++) {
+//            // Find last digit of i
+//            int last_digit_in_i = numbers.get(i) % 10;
+//            // Find first digit of i + 1
+//            String numberStr = numbers.get(i + 1).toString();
+//            int first_digit_in_index_after_i = Integer.parseInt(numberStr.substring(0, 1));
+//
+//            // If the last digit of i & the first digit of i + 1 are both 1, OR if the string of i CONTAINS "11", print true.
+//            if ((last_digit_in_i == 1 && first_digit_in_index_after_i == 1) || numbers.get(i).toString() == "11") {
+//                result = true;
+//            }
 //        }
-
-                boolean testd = false;
-                int result = 0;
-                int x = 1;
-
-                for(int i = 0; i < numbers.size() - 1; i++) {
-                    if(numbers.get(i) == x && numbers.get(i+1) == x)
-                    {
-                        System.out.printf( String.valueOf(true));
-                        result = 1 ;
-                    }
-
-                    if(i <= numbers.size() - 3 && numbers.get(i) == x && numbers.get(i+2) == x)
-                    {
-                        System.out.printf( String.valueOf(true));
-                        result = 1;
-                    }
-                }
-
-                if (result == 0){
-                    System.out.printf( String.valueOf(false));
-                }
-                System.out.printf("\n");
-
+//
+//        // 3) Print value of result
+//        System.out.println(result);
 
 
 //        4. Print the sum of the numbers,
         int sum = 0;
-        for(int number : numbers) {
+        for (int number : numbers) {
             sum += number;
         }
         System.out.println(sum);
 
+
 //        5. Print the sum of the numbers...
 //           ...except the number 13 is unlucky, so it does not count...
 //           ...and numbers that come immediately after a 13 also do not count.
+
         int sumExcept13 = 0;
-        for(int i = 0; i < numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++) {
             if (numbers.get(i) != 13) {
                 sumExcept13 += numbers.get(i);
             } else {
@@ -124,3 +130,5 @@ public class Runner {
     }
 
 }
+
+
