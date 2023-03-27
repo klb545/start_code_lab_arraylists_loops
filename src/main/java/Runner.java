@@ -57,8 +57,6 @@ public class Runner {
         System.out.println(max_val - min_val);
 
 //        3. Print True if the list contains a 1 next to a 1 somewhere.
-
-
         boolean testd = false;
         int result = 0;
         int x = 1;
@@ -80,10 +78,9 @@ public class Runner {
         }
 
 
-//        CHANGES MADE TO THE ABOVE TASK AFTER PAIRED PROGRAMMING FINISHED
+//        // CHANGES MADE TO THE ABOVE TASK AFTER PAIRED PROGRAMMING FINISHED
 //        // 1) Set default value for boolean variable 'result' to false
 //        boolean result = false;
-//
 //        // 2) Iterate through ArrayList to find consecutive 1s
 //        for (int i = 0; i < numbers.size() - 1; i++) {
 //            // Find last digit of i
@@ -92,12 +89,11 @@ public class Runner {
 //            String numberStr = numbers.get(i + 1).toString();
 //            int first_digit_in_index_after_i = Integer.parseInt(numberStr.substring(0, 1));
 //
-//            // If the last digit of i & the first digit of i + 1 are both 1, OR if the string of i CONTAINS "11", print true.
-//            if ((last_digit_in_i == 1 && first_digit_in_index_after_i == 1) || numbers.get(i).toString() == "11") {
+//            // If the last digit of i & the first digit of i + 1 are both 1, OR if the string of i contains "11", print true.
+//            if ((last_digit_in_i == 1 && first_digit_in_index_after_i == 1) || numbers.get(i).toString().contains("11")) {
 //                result = true;
 //            }
 //        }
-//
 //        // 3) Print value of result
 //        System.out.println(result);
 
